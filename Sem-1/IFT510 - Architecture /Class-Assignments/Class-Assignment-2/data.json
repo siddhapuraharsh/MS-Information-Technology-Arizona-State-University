@@ -1,0 +1,45 @@
+{
+    "_comment": {
+        "Student Name": "Harsh Siddhapura",
+        "Student ID": "1230169813",
+        "Telephone Number": "623-920-9796",
+        "Best Time to Contact": "2pm to 8pm"
+    },
+    "data": [
+        {
+            "name": "John Doe",
+            "address": "123 Main St",
+            "telephone": "555-555-1234",
+            "DOB": "1990-01-01",
+            "age": 33
+        },
+        {
+            "name": "Alice Smith",
+            "address": "456 Elm St",
+            "telephone": "555-555-5678",
+            "DOB": "1985-05-15",
+            "age": 38
+        },
+        {
+            "name": "Bob Johnson",
+            "address": "789 Oak St",
+            "telephone": "555-555-9012",
+            "DOB": "1978-12-30",
+            "age": 44
+        },
+        {
+            "name": "Emily Davis",
+            "address": "101 Pine St",
+            "telephone": "555-555-3456",
+            "DOB": "1995-07-20",
+            "age": 27
+        },
+        {
+            "name": "Michael Wilson",
+            "address": "202 Cedar St",
+            "telephone": "555-555-6789",
+            "DOB": "1980-03-10",
+            "age": 42
+        }
+    ]
+}
