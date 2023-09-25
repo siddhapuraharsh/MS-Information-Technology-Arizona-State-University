@@ -1,0 +1,44 @@
+<!--
+    Student Name: Harsh Siddhapura
+    Student ID: 1230169813
+    Telephone Number: 623-920-9796
+    Best Time to Contact: 2pm to 8pm
+-->
+
+<data>
+    <person>
+        <name>John Doe</name>
+        <address>123 Main St</address>
+        <telephone>555-555-1234</telephone>
+        <DOB>1990-01-01</DOB>
+        <age>33</age>
+    </person>
+    <person>
+        <name>Alice Smith</name>
+        <address>456 Elm St</address>
+        <telephone>555-555-5678</telephone>
+        <DOB>1985-05-15</DOB>
+        <age>38</age>
+    </person>
+    <person>
+        <name>Bob Johnson</name>
+        <address>789 Oak St</address>
+        <telephone>555-555-9012</telephone>
+        <DOB>1978-12-30</DOB>
+        <age>44</age>
+    </person>
+    <person>
+        <name>Emily Davis</name>
+        <address>101 Pine St</address>
+        <telephone>555-555-3456</telephone>
+        <DOB>1995-07-20</DOB>
+        <age>27</age>
+    </person>
+    <person>
+        <name>Michael Wilson</name>
+        <address>202 Cedar St</address>
+        <telephone>555-555-6789</telephone>
+        <DOB>1980-03-10</DOB>
+        <age>42</age>
+    </person>
+</data>
