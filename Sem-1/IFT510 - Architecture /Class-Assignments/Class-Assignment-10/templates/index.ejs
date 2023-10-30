@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Table Example</title>
+</head>
+<body>
+<div id="currentDateTime"></div>
+ 
+    <script>
+        const dateTimeElement = document.getElementById('currentDateTime');
+        const currentDateTime = new Date().toLocaleString();
+ 
+        dateTimeElement.textContent = currentDateTime;
+    </script>
+
+    <h1>Your IP address is: <span id="ip-address"></span></h1>
+    
+    <script>
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip-address').textContent = data.ip;
+            })
+            .catch(error => {
+                console.error('Error fetching IP address:', error);
+            });
+    </script>
+
+<h1>Student Data</h1>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>Grade</th>
+</tr>
+</thead>
+<tbody id="table-body">
+{% for student in students %}
+<tr>
+<td>{{ student.name }}</td>
+<td>{{ student.age }}</td>
+<td>{{ student.grade }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<!-- Add Student Form -->
+<h2>Add Student</h2>
+<form id="addStudentForm" method="POST" action="/add_student">
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" required><br>
+<label for="age">Age:</label>
+<input type="number" id="age" name="age" required><br>
+<label for="grade">Grade:</label>
+<input type="text" id="grade" name="grade" required><br>
+<button type="submit">Add Student</button>
+</form>
+</body>
+<script>
+
+
+</script>
+</html>
