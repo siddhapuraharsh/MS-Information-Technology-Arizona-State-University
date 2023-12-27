@@ -1,0 +1,52 @@
+[
+    {
+        "Name": "John Smith",
+        "Age": 30,
+        "Email": "john.smith@example.com"
+    },
+    {
+        "Name": "Alice Johnson",
+        "Age": 28,
+        "Email": "alice.johnson@example.com"
+    },
+    {
+        "Name": "Bob Brown",
+        "Age": 35,
+        "Email": "bob.brown@example.com"
+    },
+    {
+        "Name": "Emily Davis",
+        "Age": 25,
+        "Email": "emily.davis@example.com"
+    },
+    {
+        "Name": "Michael Wilson",
+        "Age": 32,
+        "Email": "michael.wilson@example.com"
+    },
+    {
+        "Name": "Sophia Lee",
+        "Age": 27,
+        "Email": "sophia.lee@example.com"
+    },
+    {
+        "Name": "David Martinez",
+        "Age": 29,
+        "Email": "david.martinez@example.com"
+    },
+    {
+        "Name": "Olivia Taylor",
+        "Age": 26,
+        "Email": "olivia.taylor@example.com"
+    },
+    {
+        "Name": "James Harris",
+        "Age": 31,
+        "Email": "james.harris@example.com"
+    },
+    {
+        "Name": "Ava Clark",
+        "Age": 33,
+        "Email": "ava.clark@example.com"
+    }
+]
