@@ -1,0 +1,4 @@
+Folder: /Users/harshsiddhapura/Harsh/Education/MS_IT/Sem-1/IFT510 - Architecture /Python Labs/Module-8/Lab-1/InputTestingFolder
+ - testing-1.py (.py) - Size: 23 bytes, Modified: 2023-11-21 23:22:29
+ - testing-2.txt (.txt) - Size: 23 bytes, Modified: 2023-11-21 23:22:43
+ - testing-3.json (.json) - Size: 66 bytes, Modified: 2023-11-21 23:23:30
