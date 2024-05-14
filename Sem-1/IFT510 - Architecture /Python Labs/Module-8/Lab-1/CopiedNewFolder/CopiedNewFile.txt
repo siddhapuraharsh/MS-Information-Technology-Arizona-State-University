@@ -1,0 +1,51 @@
+import os
+from datetime import datetime
+import inspect
+import shutil
+
+def traverse_directory(folder_path, output_file):
+    with open(output_file, "w") as file:
+        for root, dirs, files in os.walk(folder_path):
+            file.write(f"Folder: {root}\n")
+            for directory in dirs:
+                directory_path = os.path.join(root, directory)
+                folder_name = os.path.basename(directory_path)
+                file.write(f" - {folder_name}\n")
+            for file_name in files:
+                file_path = os.path.join(root, file_name)
+                file_name = os.path.basename(file_path)
+                file_extension = os.path.splitext(file_name)[1]
+                file_stats = os.stat(file_path)
+                file_size = file_stats.st_size
+                file_modified = file_stats.st_mtime
+                file_modified_date = datetime.fromtimestamp(file_modified).strftime("%Y-%m-%d %H:%M:%S")
+                file.write(f" - {file_name} ({file_extension}) - Size: {file_size} bytes, Modified: {file_modified_date}\n")
+                print(f" - {file_name} ({file_extension}) - Size: {file_size} bytes, Modified: {file_modified_date}\n")
+            file.write("\n")
+
+def get_current_file_content():
+    current_file_path = inspect.getfile(inspect.currentframe())
+    with open(current_file_path, "r") as current_file:
+        return current_file.read()
+
+def copy_content_to_new_file(content, new_file_path):
+    with open(new_file_path, "w") as new_file:
+        new_file.write(content)
+
+if __name__ == "__main__":
+    folder_path = input("Enter the path of the folder to traverse: ")
+    output_file = input("Enter the name of the output file: ")
+
+    # Task 1: Print progress on Terminal/Console
+    print("Traversing the directory and writing to the output file...")
+
+    traverse_directory(folder_path, output_file)
+    print("Traversal completed. The results are saved in", output_file)
+
+    # Task 2: Locate the current file and get its content
+    current_file_content = get_current_file_content()
+
+    # Task 3 and 4: Create a new file and copy the content
+    new_file_path = "/Users/harshsiddhapura/Harsh/Education/MS_IT/Sem-1/IFT510 - Architecture /Python Labs/Module-8/Lab-1/CopiedNewFolder/CopiedNewFile.txt"
+    copy_content_to_new_file(current_file_content, new_file_path)
+    print(f"Content copied to the new file: {new_file_path}")
