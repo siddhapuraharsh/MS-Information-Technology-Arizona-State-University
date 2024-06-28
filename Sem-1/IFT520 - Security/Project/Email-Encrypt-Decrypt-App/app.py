@@ -3,6 +3,8 @@ from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.fernet import Fernet
+import tkinter as tk
+from tkinter import messagebox
 
 # Simulating a database of email addresses and associated public/private keys
 database = {
@@ -24,7 +26,17 @@ for email, keys in database.items():
     keys["private_key"] = private_key
     keys["public_key"] = private_key.public_key()
 
+def show_dialog(title, message):
+    root = tk.Tk()
+    root.withdraw()  # Hide the main window
+
+    # Show a dialog box
+    messagebox.showinfo(title, message)
+
 def encrypt_message(recipient_email, subject, message):
+    # Intermediate processing dialog
+    show_dialog("Intermediate Processing", "Encrypting message...")
+
     # Simulate sending an email
     if recipient_email in database:
         recipient_public_key = database[recipient_email]["public_key"]
@@ -46,13 +58,20 @@ def encrypt_message(recipient_email, subject, message):
                     label=None,
                 ),
             )
+
+            # Encryption dialog
+            show_dialog("Encryption", f"Encrypted Subject: {cipherSubject.hex()}\nEncrypted Message: {cipherMessage.hex()}")
+
             return cipherSubject, cipherMessage
         else:
-            return "Recipient's public key not found."
+            show_dialog("Error", "Recipient's public key not found.")
     else:
-        return "Recipient email not found in the database."
+        show_dialog("Error", "Recipient email not found in the database.")
 
 def decrypt_message(email, cipherSubject, cipherMessage):
+    # Intermediate processing dialog
+    show_dialog("Intermediate Processing", "Decrypting message...")
+
     # Simulate receiving an email
     if email in database:
         private_key = database[email]["private_key"]
@@ -74,11 +93,15 @@ def decrypt_message(email, cipherSubject, cipherMessage):
                     label=None,
                 ),
             )
+
+            # Decryption dialog
+            show_dialog("Decryption", f"Decrypted Subject: {plainSubject.decode()}\nDecrypted Message: {plainMessage.decode()}")
+
             return plainSubject.decode(), plainMessage.decode()
         else:
-            return "Private key not found."
+            show_dialog("Error", "Private key not found.")
     else:
-        return "Email not found in the database."
+        show_dialog("Error", "Email not found in the database.")
 
 # Example usage
 sender_email = "harsh@example.com"
@@ -88,12 +111,6 @@ message = "This is the content of the email."
 
 # Encrypt and send the message
 cipherSubject, cipherMessage = encrypt_message(recipient_email, subject, message)
-print(f"Sender Email: {sender_email}\n")
-print(f"Encrypted Subject: {cipherSubject}\n")
-print(f"Encrypted Message: {cipherMessage}\n\n\n\n")
 
 # Simulate receiving the message and decrypting it
 plainSubject, plainMessage = decrypt_message(recipient_email, cipherSubject, cipherMessage)
-print(f"Receiver Email: {recipient_email}\n")
-print(f"Decrypted Subject: {plainSubject}\n")
-print(f"Decrypted Message: {plainMessage}\n")
